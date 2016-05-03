@@ -1,3 +1,4 @@
+var chart
 function chartOne() {
 
 	var margin = {top: 20, right: 20, bottom: 30, left: 50},
@@ -261,19 +262,19 @@ function chartThree() {
 
 
 $(document).ready(function() {
+
 	chartOne();
 	chartTwo();
 	chartThree();
 
 
 	$(".btn").on("click", function() {
-		var thisChart = $(this).attr("val");
+	 
+		var thisChart = $(this).attr("val"); //Ex: `chart1` `chart2` or `chart3` passed from a "val" attribute in the button markup.
+		$(".chart").removeClass("active"); // Hide all of the charts by removing the active class. Only one will have it, but we'l target all of them anyway.
+		$(".chart."+thisChart).addClass("active"); //Show the chart that corresponds with the button we just clicked by giving it the active class.
 
-		$(".chart").css("opacity", 0);
-		$(".chart"+thisChart).css("opacity", 1);
-
-
-	})
-
-
+    });
 })
+
+

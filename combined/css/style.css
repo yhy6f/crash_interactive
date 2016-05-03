@@ -1,7 +1,24 @@
+//Wrap your charts in a div to hold all of your charts.
+//And give it a position property of `relative`.
+.chart-container {
+position: relative;
+}
+
+//Each chart inside should have an absolute position so they can lay on top of one another.
+.chart {
+position: absolute;
+left: 0;
+top: 0;
+display: none; //The default state for each chart should be that it's hidden.
+}
+
+.chart.active {
+display: block; //Any chart that also has the class `active` will be visible.
+}
 
 
 
-
+/*
 .chart-container {
   position: relative;
 }
@@ -11,7 +28,7 @@
   position: absolute;
   top: 0;
   left: 0;
-}
+}*/
 
 
 
