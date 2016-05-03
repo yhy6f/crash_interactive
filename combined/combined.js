@@ -1,4 +1,4 @@
-var chart
+
 function chartOne() {
 
 	var margin = {top: 20, right: 20, bottom: 30, left: 50},
@@ -99,8 +99,8 @@ function chartOne() {
 
 function chartTwo() {
 	var margin = {top: 20, right: 20, bottom: 30, left: 50},
-	    width = 960 - margin.left - margin.right,
-	    height = 500 - margin.top - margin.bottom;
+	    width = $(".chart2").width() - margin.left - margin.right,
+	    height = $(".chart2").height() - margin.top - margin.bottom;
 
 	var formatDate = d3.time.format("%Y");
 
@@ -176,8 +176,8 @@ function chartTwo() {
 
 function chartThree() {
 	var margin = {top: 20, right: 20, bottom: 30, left: 50},
-	    width = 960 - margin.left - margin.right,
-	    height = 500 - margin.top - margin.bottom;
+	    width = $(".chart3").width() - margin.left - margin.right,
+	    height = $(".chart3").height() - margin.top - margin.bottom;
 
 	var formatDate = d3.time.format("%Y");
 
