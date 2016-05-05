@@ -2,8 +2,8 @@
 function chartOne() {
 
 	var margin = {top: 20, right: 20, bottom: 30, left: 50},
-	    width = $(".chart1").width() - margin.left - margin.right,
-	    height = $(".chart1").height() - margin.top - margin.bottom;
+	    width = $(".chart").width() - margin.left - margin.right,
+	    height = $(".chart").height() - margin.top - margin.bottom;
 
 	var parseDate = d3.time.format("%Y").parse;
 	    // formatPercent = d3.format(".0%");
@@ -38,7 +38,7 @@ function chartOne() {
 	var stack = d3.layout.stack()
 	    .values(function(d) { return d.values; });
 
-	var svg = d3.select(".chart1").append("svg")
+	var svg = d3.select(".chart").append("svg")
 	    .attr("width", width + margin.left + margin.right)
 	    .attr("height", height + margin.top + margin.bottom)
 	  .append("g")
@@ -270,9 +270,9 @@ $(document).ready(function() {
 
 	$(".btn").on("click", function() {
 	 
-		var thisChart = $(this).attr("val"); //Ex: `chart1` `chart2` or `chart3` passed from a "val" attribute in the button markup.
-		$(".chart").removeClass("active"); // Hide all of the charts by removing the active class. Only one will have it, but we'l target all of them anyway.
-		$(".chart."+thisChart).addClass("active"); //Show the chart that corresponds with the button we just clicked by giving it the active class.
+	  var thisChart = $(this).attr("val"); //Ex: `chart1` `chart2` or `chart3` passed from a "val" attribute in the button markup.
+	  $(".chart").removeClass("active"); // Hide all of the charts by removing the active class. Only one will have it, but we'l target all of them anyway.
+	  $(".chart."+thisChart).addClass("active"); //Show the chart that corresponds with the button we just clicked by giving it the active class.
 
     });
 })
